@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+
+  webdav:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - "./webdav.conf:/etc/nginx/conf.d/default.conf"
+      - "./files:/files"
+    environment:
+      - USERNAME=hacker
+      - PASSWORD=secret
